@@ -1,0 +1,824 @@
+<!-- Hero Section -->
+<section id="hero" class="hero section">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="hero-wrapper">
+            <div class="row g-4">
+                <div class="col-lg-7">
+                    <div class="hero-content" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="content-header">
+                            <h1>Struggling with your semester project?</h1>
+                            <p>We've got you covered! BCAProjectSathi is here to help you succeed in your BCA semester projects with personalized assistance and project documentation.</p>
+                        </div>
+
+                        <div class="search-container" data-aos="fade-up" data-aos-delay="300">
+                            <div class="search-header">
+                                <h3>Start Your Project Journey</h3>
+                                <p>Discover hundreds of approved project ideas and resources.</p>
+                            </div>
+
+                            <!-- Enhanced Search Form -->
+                            <form (ngSubmit)="onSearchSubmit()" class="property-search-form">
+                                <div class="search-grid">
+                                    <div class="search-field">
+                                        <label for="search-title" class="field-label">Project Title</label>
+                                        <input 
+                                            type="text" 
+                                            id="search-title" 
+                                            name="project_title"
+                                            [(ngModel)]="searchForm.title"
+                                            placeholder="Enter your project title"
+                                            class="search-input">
+                                        <i class="bi bi-search field-icon"></i>
+                                    </div>
+
+                                    <div class="search-field">
+                                        <label for="search-type" class="field-label">Project Type</label>
+                                        <select 
+                                            id="search-type" 
+                                            name="project_type"
+                                            [(ngModel)]="searchForm.type"
+                                            class="search-select">
+                                            <option *ngFor="let type of projectTypes" [value]="type.value">
+                                                {{ type.label }}
+                                            </option>
+                                        </select>
+                                        <i class="bi bi-code-slash field-icon"></i>
+                                    </div>
+
+                                    <div class="search-field">
+                                        <label for="search-budget" class="field-label">Budget Range</label>
+                                        <select 
+                                            id="search-budget" 
+                                            name="price_range"
+                                            [(ngModel)]="searchForm.priceRange"
+                                            class="search-select">
+                                            <option *ngFor="let range of priceRanges" [value]="range.value">
+                                                {{ range.label }}
+                                            </option>
+                                        </select>
+                                        <i class="bi bi-currency-dollar field-icon"></i>
+                                    </div>
+
+                                    <div class="search-field">
+                                        <label for="search-semester" class="field-label">Semester</label>
+                                        <select 
+                                            id="search-semester" 
+                                            name="semester"
+                                            [(ngModel)]="searchForm.semester"
+                                            class="search-select">
+                                            <option *ngFor="let sem of semesters" [value]="sem.value">
+                                                {{ sem.label }}
+                                            </option>
+                                        </select>
+                                        <i class="bi bi-mortarboard field-icon"></i>
+                                    </div>
+                                </div>
+
+                                <div class="search-actions">
+                                    <button type="submit" class="search-btn primary">
+                                        <i class="bi bi-search"></i>
+                                        <span>Find Projects</span>
+                                    </button>
+                                    <button type="button" class="search-btn secondary" (click)="resetSearch()">
+                                        <i class="bi bi-arrow-clockwise"></i>
+                                        <span>Reset</span>
+                                    </button>
+                                </div>
+                            </form>
+
+                            <!-- Quick Search Options -->
+                            <div class="quick-search-section mt-4" data-aos="fade-up" data-aos-delay="400">
+                                <div class="quick-search-header">
+                                    <h5>Popular Searches</h5>
+                                </div>
+                                <div class="quick-search-tags">
+                                    <button class="quick-tag" (click)="searchByCategory('Web Development')">
+                                        <i class="bi bi-globe"></i>
+                                        Web Development
+                                    </button>
+                                    <button class="quick-tag" (click)="searchByCategory('Game Development')">
+                                        <i class="bi bi-controller"></i>
+                                        Game Development
+                                    </button>
+                                    <button class="quick-tag" (click)="searchBySemester('6th')">
+                                        <i class="bi bi-mortarboard"></i>
+                                        6th Semester
+                                    </button>
+                                    <button class="quick-tag" (click)="searchByCategory('Management System')">
+                                        <i class="bi bi-kanban"></i>
+                                        Management System
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End Hero Content -->
+
+                <div class="col-lg-5 d-flex align-items-center">
+                    <div class="hero-visual" data-aos="fade-left" data-aos-delay="400">
+                        <div class="visual-container">
+                            <div class="featured-property" *ngIf="heroProject">
+                                <img [src]="heroProject.image" [alt]="heroProject.alt" class="img-fluid">
+                                <div class="property-info">
+                                    <div class="property-badge">
+                                        <span class="badge-premium">{{ heroProject.badge.text }}</span>
+                                    </div>
+                                    <div class="property-price">{{ heroProject.price }}</div>
+                                    <div class="property-details">
+                                        <div class="detail-item" *ngFor="let spec of heroProject.specs">
+                                            <i [class]="spec.icon"></i>
+                                            <span>{{ spec.label }}</span>
+                                        </div>
+                                    </div>
+                                    <a [href]="heroProject.url" class="view-project-btn">
+                                        <i class="bi bi-eye"></i>
+                                        View Project
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="overlay-images" *ngIf="(heroProject?.gallery?.length ?? 0) >= 2">
+                                <div class="overlay-img overlay-1">
+                                    <img [src]="heroProject?.gallery?.[0]" alt="Project Screenshot 1" class="img-fluid">
+                                </div>
+                                <div class="overlay-img overlay-2">
+                                    <img [src]="heroProject?.gallery?.[1]" alt="Project Screenshot 2" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End Hero Visual -->
+            </div>
+        </div>
+    </div>
+</section><!-- /Hero Section -->
+
+<!-- ...rest of your existing template... -->
+
+<!-- Home About Section -->
+<section id="home-about" class="home-about section" *ngIf="brandData() as brandData">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-5">
+
+            <div class="col-lg-5" data-aos="zoom-in" data-aos-delay="200">
+                <div class="image-gallery">
+                    <div class="primary-image">
+                        <img src="assets/images/working_space.jpg" alt="Modern Property" class="img-fluid">
+                        <div class="experience-badge">
+                            <div class="badge-content">
+                                <div class="number"><span data-purecounter-start="0" data-purecounter-end="5"
+                                            data-purecounter-duration="3" class="purecounter"></span>+</div>
+                                <div class="text">Years<br>Experience</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="secondary-image">
+                        <img src="assets/images/graduation_cap.jpg" alt="Luxury Interior" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
+                <div class="content">
+                    <div class="section-header">
+                        <span class="section-label">About BCAProjectSathi</span>
+                        <h2>Building Projects, Providing Solutions</h2>
+                    </div>
+
+                    <p>BCAProjectSathi is your trusted partner for BCA semester projects. With over 5 years of experience, we specialize in providing personalized web development project assistance tailored to the unique needs of BCA students. 
+                        We also provide project documentation, study materials like notes based on syllabus, past year questions, and more.
+                    </p>
+
+                    <div class="achievements-list">
+                        <div class="achievement-item">
+                            <div class="achievement-icon">
+                                <i class="bi bi-house-door"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h4><span data-purecounter-start="0" data-purecounter-end="50"
+                                            data-purecounter-duration="3" class="purecounter"></span>+ Projects
+                                </h4>
+                                <p>Successfully completed transactions</p>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h4><span data-purecounter-start="0" data-purecounter-end="90"
+                                            data-purecounter-duration="3" class="purecounter"></span>% Student
+                                    Satisfaction</h4>
+                                <p>Happy students recommend us</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-section">
+                        <a href="/about" class="btn-cta">
+                            <span>Discover Our Story</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                        <div class="contact-info">
+                            <div class="contact-icon">
+                                <i class="bi bi-telephone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span>Call us today</span>
+                                <strong>{{brandData?.contactPhone}}</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section><!-- /Home About Section -->
+
+<!-- Featured Properties Section -->
+<section id="featured-properties" class="featured-properties section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Featured Projects</h2>
+        <p>Explore our handpicked selection of standout projects that showcase our expertise and commitment to excellence.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+  <div class="row gy-5">
+
+    <!-- Featured Property Main -->
+    <div class="col-lg-8">
+      <div class="featured-property-main" data-aos="zoom-in" data-aos-delay="200" *ngIf="featuredProperty">
+        <div class="property-hero">
+          <img [src]="featuredProperty.image" [alt]="featuredProperty.alt" class="img-fluid">
+          <div class="property-overlay">
+            <div class="property-badge-main" [ngClass]="featuredProperty.badge.type" *ngIf="featuredProperty.badge">
+              {{ featuredProperty.badge.text }}
+            </div>
+            <div class="property-stats" *ngIf="featuredProperty.specs">
+              <div class="stat-item" *ngFor="let stat of featuredProperty.specs">
+                <i [class]="stat.icon"></i>
+                <span>{{ stat.label }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="property-hero-content">
+          <div class="property-header">
+            <div class="property-info">
+              <h2>
+                <a [href]="featuredProperty.url">{{ featuredProperty.title }}</a>
+              </h2>
+            </div>
+            <div class="property-price-main">{{ featuredProperty.price }}</div>
+          </div>
+          <p class="property-description">{{ featuredProperty.description }}</p>
+          <div class="property-actions-main">
+            <a 
+               [href]="featuredProperty.url"
+               class="btn-outline-custom">View Details
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Featured Property Main -->
+
+    <!-- Sidebar Properties -->
+    <div class="col-lg-4">
+      <div class="properties-sidebar">
+        <div class="sidebar-property-card"
+             *ngFor="let property of sidebarProperties; let i = index"
+             [attr.data-aos]="'fade-left'"
+             [attr.data-aos-delay]="300 + i * 100">
+          <div class="sidebar-property-image">
+            <img [src]="property.image" [alt]="property.alt" class="img-fluid">
+            <div class="sidebar-property-badge" [ngClass]="property.badge.type">
+              {{ property.badge.text }}
+            </div>
+          </div>
+          <div class="sidebar-property-content">
+            <h4><a [href]="property.url">{{ property.title }}</a></h4>
+            <div class="sidebar-specs">
+              <span *ngFor="let spec of property.specs">
+                <i [class]="spec.icon"></i>
+                {{ spec.label }}
+              </span>
+            </div>
+            <div class="sidebar-price-row">
+              <div class="sidebar-price">{{ property.price }}</div>
+              <a [href]="property.url" class="sidebar-btn">View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Sidebar Properties -->
+
+  </div>
+
+</div>
+
+</section><!-- /Featured Properties Section -->
+
+<!-- Featured Services Section -->
+<section id="featured-services" class="featured-services section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Our Services</h2>
+        <p>BCAProjectSathi is your trusted partner for BCA semester projects. With over 5 years of experience, we specialize in providing personalized web development project assistance tailored to the unique needs of BCA students. We also provide project documentation, study materials like notes based on syllabus, past year questions, and more.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-4">
+
+            <!-- Service 1 -->
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="500">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-globe"></i>
+                    </div>
+                    <div class="service-info">
+                        <h3><a href="#">.np Domain + Portfolio Hosting</a></h3>
+                        <p>Showcase your work with a custom .np domain and static portfolio hosting.</p>
+                        <ul class="service-highlights">
+                            <li><i class="bi bi-check-circle-fill"></i> Free .np Domain Registration</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Portfolio Deployment</li>
+                            <li><i class="bi bi-check-circle-fill"></i> SEO Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-code-slash"></i>
+                    </div>
+                    <div class="service-info">
+                        <h3><a href="#">Web Development</a></h3>
+                        <p>Specializing in PHP + MySQL, HTML, CSS, JavaScript, Bootstrap, and responsive design to bring your ideas to life.</p>
+                        <ul class="service-highlights">
+                            <li><i class="bi bi-check-circle-fill"></i> PHP + MySQL</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Responsive Design</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Modern UI/UX</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row g-4 mt-4">
+
+            <!-- Service 3 -->
+            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="400">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-server"></i>
+                    </div>
+                    <div class="service-info">
+                        <h3><a href="#">Spring Boot & PostgreSQL</a></h3>
+                        <p>Advanced backend solutions for robust and scalable web applications.</p>
+                        <ul class="service-highlights">
+                            <li><i class="bi bi-check-circle-fill"></i> API Development</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Database Optimization</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Enterprise Level Solutions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="500">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-book"></i>
+                    </div>
+                    <div class="service-info">
+                        <h3><a href="#">BCA Study Materials</a></h3>
+                        <p>Comprehensive study materials and resources for BCA students.</p>
+                        <ul class="service-highlights">
+                            <li><i class="bi bi-check-circle-fill"></i> Free Syllabus Based Notes</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Semester Syllabus</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Past Year Questions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row g-4 mt-4">
+
+            <!-- Service 5 -->
+            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="600">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-plug"></i>
+                    </div>
+                    <div class="service-info">
+                        <h3><a href="#">API Integration</a></h3>
+                        <p>Seamless integration of eSewa and Khalti payment gateways, along with Postman API collection support.</p>
+                        <ul class="service-highlights">
+                            <li><i class="bi bi-check-circle-fill"></i> eSewa & Khalti Integration</li>
+                            <li><i class="bi bi-check-circle-fill"></i> RESTful APIs</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Postman Collection Support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="700">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-file-earmark-text"></i>
+                    </div>
+                    <div class="service-info">
+                        <h3><a href="#">Project Documentation</a></h3>
+                        <p>Professional formatting and structuring of your project documentation to meet academic standards.</p>
+                        <ul class="service-highlights">
+                            <li><i class="bi bi-check-circle-fill"></i> Academic Formatting</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Complete Report Structuring</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Error-Free Presentation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center" data-aos="zoom-in" data-aos-delay="800">
+            <a href="/services" class="btn-view-all">
+                <span>View All Services</span>
+                <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+
+    </div>
+
+</section><!-- /Featured Services Section -->
+
+
+<!-- Why Us Section -->
+<section id="why-us" class="why-us section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Why Us</h2>
+    <p>BCAProjectSathi is the trusted companion for BCA students — guiding you through projects, study resources, and academic growth with personalized support.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row gy-4">
+
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+        <div class="content">
+          <h3>Why Choose BCAProjectSathi?</h3>
+          <p>With 5+ years of experience working with BCA students, we understand academic challenges better than anyone. From project development to complete documentation, we provide end-to-end support that ensures success in every semester.</p>
+
+          <div class="features-list">
+            <div class="feature-item d-flex align-items-center mb-3">
+              <div class="icon-wrapper me-3">
+                <i class="bi bi-check-circle-fill"></i>
+              </div>
+              <div>
+                <h5>Tailored for BCA Students</h5>
+                <p>All our services are syllabus-focused and aligned with academic requirements.</p>
+              </div>
+            </div>
+
+            <div class="feature-item d-flex align-items-center mb-3">
+              <div class="icon-wrapper me-3">
+                <i class="bi bi-book"></i>
+              </div>
+              <div>
+                <h5>Comprehensive Study Materials</h5>
+                <p>Access notes, past year questions, and project guidance all in one place.</p>
+              </div>
+            </div>
+
+            <div class="feature-item d-flex align-items-center mb-3">
+              <div class="icon-wrapper me-3">
+                <i class="bi bi-headset"></i>
+              </div>
+              <div>
+                <h5>24/7 Student Support</h5>
+                <p>Our team is always ready to guide you, whether it's project coding or documentation formatting.</p>
+              </div>
+            </div>
+
+            <div class="feature-item d-flex align-items-center mb-3">
+              <div class="icon-wrapper me-3">
+                <i class="bi bi-graph-up-arrow"></i>
+              </div>
+              <div>
+                <h5>Proven Student Success</h5>
+                <p>Hundreds of students have successfully submitted projects and achieved better grades with our help.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-buttons mt-4">
+            <a href="/about" class="btn btn-primary me-3">Learn More About Us</a>
+            <a href="/contact" class="btn btn-outline-primary">Contact Our Team</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+        <div class="stats-section">
+          <div class="row gy-4">
+            <div class="col-md-6">
+              <div class="stat-card text-center">
+                <div class="stat-icon mb-3">
+                  <i class="bi bi-laptop"></i>
+                </div>
+                <div class="stat-number">
+                  <span data-purecounter-start="0" data-purecounter-end="50"
+                    data-purecounter-duration="2" class="purecounter"></span>+
+                </div>
+                <div class="stat-label">Projects Delivered</div>
+                <p>Successfully built and delivered projects for BCA students across Nepal.</p>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="stat-card text-center">
+                <div class="stat-icon mb-3">
+                  <i class="bi bi-people"></i>
+                </div>
+                <div class="stat-number">
+                  <span data-purecounter-start="0" data-purecounter-end="90"
+                    data-purecounter-duration="2" class="purecounter"></span>%
+                </div>
+                <div class="stat-label">Student Satisfaction</div>
+                <p>Our students consistently rate us highly for reliability and support.</p>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="stat-card text-center">
+                <div class="stat-icon mb-3">
+                  <i class="bi bi-clock-history"></i>
+                </div>
+                <div class="stat-number">
+                  <span data-purecounter-start="0" data-purecounter-end="5"
+                    data-purecounter-duration="2" class="purecounter"></span>+
+                </div>
+                <div class="stat-label">Years Experience</div>
+                <p>Guiding BCA students with projects, coding, and study resources since 2019.</p>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="stat-card text-center">
+                <div class="stat-icon mb-3">
+                  <i class="bi bi-award"></i>
+                </div>
+                <div class="stat-number">
+                  <span data-purecounter-start="0" data-purecounter-end="90"
+                    data-purecounter-duration="2" class="purecounter"></span>+
+                </div>
+                <div class="stat-label">Top Scores Achieved</div>
+                <p>Our guidance has helped students secure excellent results.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-preview mt-5">
+            <div class="testimonial-card">
+              <div class="quote-icon mb-2">
+                <i class="bi bi-quote"></i>
+              </div>
+              <p>"BCAProjectSathi made my project journey stress-free. From coding help to final documentation, their support was amazing!"</p>
+              <div class="testimonial-author d-flex align-items-center mt-3">
+                <img src="assets/images/apson-jirel.jpg" alt="Student Image" class="author-image me-3">
+                <div>
+                  <h6>Apson Jirel</h6>
+                  <span>BCA Student</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section><!-- /Why Us Section -->
+
+
+<!-- Call To Action Section -->
+<section class="call-to-action-1 call-to-action section" id="call-to-action" *ngIf="brandData() as brandData">
+  <div class="cta-bg" style="background-image: url('assets/images/tech-background.png');"></div>
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row justify-content-center">
+      <div class="col-xl-6 col-lg-8">
+
+        <div class="cta-content text-center">
+          <h2>Need Help With Your BCA Project?</h2>
+          <p>From project development and API integration to academic documentation and study materials — BCAProjectSathi is here to guide you every step of the way.</p>
+
+          <div class="cta-buttons">
+            <a href="/contact" class="btn btn-primary">Contact Us Today</a>
+            <a href="{{brandData?.contactPhone}}" class="btn btn-outline">Schedule a Call</a>
+          </div>
+
+          <div class="cta-features">
+            <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-telephone-fill"></i>
+              <span>Free Consultation</span>
+            </div>
+            <div class="feature-item" data-aos="fade-up" data-aos-delay="250">
+              <i class="bi bi-clock-fill"></i>
+              <span>24/7 Support</span>
+            </div>
+            <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-shield-check-fill"></i>
+              <span>Trusted by Students</span>
+            </div>
+          </div>
+
+        </div><!-- End CTA Content -->
+
+      </div>
+    </div>
+
+  </div>
+</section><!-- /Call To Action Section -->
+
+
+<!-- Recent Blog Posts Section -->
+<!-- <section id="recent-blog-posts" class="recent-blog-posts section">
+
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Recent Blog Posts</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+    </div>
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row">
+
+            <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+                <article class="featured-post">
+                    <div class="featured-img">
+                        <img src="assets/images/blog-post-7.webp" alt="" class="img-fluid" loading="lazy">
+                        <div class="featured-badge">Featured</div>
+                    </div>
+
+                    <div class="featured-content">
+                        <div class="post-header">
+                            <a href="#" class="category">Technology</a>
+                            <span class="post-date">Dec 18, 2024</span>
+                        </div>
+
+                        <h2 class="post-title">
+                            <a href="#">Lorem ipsum dolor sit amet consectetur adipiscing elit mauris</a>
+                        </h2>
+
+                        <p class="post-excerpt">
+                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit.
+                        </p>
+
+                        <div class="post-footer">
+                            <div class="author-info">
+                                <img src="assets/images/person-m-8.webp" alt="" class="author-avatar">
+                                <div class="author-details">
+                                    <span class="author-name">Marcus Johnson</span>
+                                    <span class="read-time">5 min read</span>
+                                </div>
+                            </div>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="featured-post" data-aos="fade-up" data-aos-delay="400">
+                    <div class="featured-img">
+                        <img src="assets/images/blog-post-3.webp" alt="" class="img-fluid" loading="lazy">
+                        <div class="featured-badge">Featured</div>
+                    </div>
+
+                    <div class="featured-content">
+                        <div class="post-header">
+                            <a href="#" class="category">Innovation</a>
+                            <span class="post-date">Dec 16, 2024</span>
+                        </div>
+
+                        <h2 class="post-title">
+                            <a href="#">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse</a>
+                        </h2>
+
+                        <p class="post-excerpt">
+                            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                            voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+                            occaecati cupiditate non provident.
+                        </p>
+
+                        <div class="post-footer">
+                            <div class="author-info">
+                                <img src="assets/images/person-f-7.webp" alt="" class="author-avatar">
+                                <div class="author-details">
+                                    <span class="author-name">Emma Rodriguez</span>
+                                    <span class="read-time">7 min read</span>
+                                </div>
+                            </div>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-lg-4">
+
+                <article class="recent-post" data-aos="fade-up" data-aos-delay="200">
+                    <div class="recent-img">
+                        <img src="assets/images/blog-post-5.webp" alt="" class="img-fluid" loading="lazy">
+                    </div>
+                    <div class="recent-content">
+                        <a href="#" class="category">Business</a>
+                        <h3 class="recent-title">
+                            <a href="#">Excepteur sint occaecat cupidatat non proident sunt</a>
+                        </h3>
+                        <div class="recent-meta">
+                            <span class="author">By Jessica Kim</span>
+                            <span class="date">Dec 15, 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="recent-post" data-aos="fade-up" data-aos-delay="250">
+                    <div class="recent-img">
+                        <img src="assets/images/blog-post-9.webp" alt="" class="img-fluid" loading="lazy">
+                    </div>
+                    <div class="recent-content">
+                        <a href="#" class="category">Marketing</a>
+                        <h3 class="recent-title">
+                            <a href="#">Voluptate velit esse cillum dolore eu fugiat nulla</a>
+                        </h3>
+                        <div class="recent-meta">
+                            <span class="author">By David Park</span>
+                            <span class="date">Dec 12, 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="recent-post" data-aos="fade-up" data-aos-delay="300">
+                    <div class="recent-img">
+                        <img src="assets/images/blog-post-6.webp" alt="" class="img-fluid" loading="lazy">
+                    </div>
+                    <div class="recent-content">
+                        <a href="#" class="category">Design</a>
+                        <h3 class="recent-title">
+                            <a href="#">Pariatur consectetur adipiscing elit sed do eiusmod</a>
+                        </h3>
+                        <div class="recent-meta">
+                            <span class="author">By Sarah Miller</span>
+                            <span class="date">Dec 10, 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="recent-post" data-aos="fade-up" data-aos-delay="350">
+                    <div class="recent-img">
+                        <img src="assets/images/blog-post-8.webp" alt="" class="img-fluid" loading="lazy">
+                    </div>
+                    <div class="recent-content">
+                        <a href="#" class="category">Tech</a>
+                        <h3 class="recent-title">
+                            <a href="#">Magna aliquam erat volutpat consectetur adipiscing</a>
+                        </h3>
+                        <div class="recent-meta">
+                            <span class="author">By Alex Chen</span>
+                            <span class="date">Dec 8, 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section> -->
+<!-- /Recent Blog Posts Section -->

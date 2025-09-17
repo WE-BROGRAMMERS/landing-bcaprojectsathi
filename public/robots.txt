@@ -1,0 +1,19 @@
+<!-- filepath: src/robots.txt -->
+User-agent: *
+Allow: /
+
+Sitemap: https://bcaprojectsathi.com/sitemap.xml
+
+# Disallow unnecessary paths
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# Allow search engines to crawl important content
+Allow: /projects/
+Allow: /services/
+Allow: /about/
+Allow: /contact/
+
+# Crawl delay
+Crawl-delay: 1

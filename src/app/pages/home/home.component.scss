@@ -1,0 +1,183 @@
+// Add this to your home.component.scss
+.hero {
+  .search-container {
+    .property-search-form {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+
+      .search-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .search-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+      }
+    }
+
+    .quick-search-section {
+      .quick-search-header h5 {
+        color: #2c3e50;
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      .quick-search-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+
+        .quick-tag {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.5rem 1rem;
+          background: rgba(13, 110, 253, 0.1);
+          color: #077f46;
+          border: 1px solid rgba(13, 110, 253, 0.2);
+          border-radius: 25px;
+          font-size: 0.875rem;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: #077f46;
+            color: white;
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+  }
+
+  .hero-visual {
+    .visual-container {
+      position: relative;
+
+      .featured-property {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+
+        .property-info {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+          color: white;
+          padding: 2rem;
+
+          .property-badge .badge-premium {
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            color: #000;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 0.75rem;
+          }
+
+          .property-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+          }
+
+          .property-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+
+            .detail-item {
+              display: flex;
+              align-items: center;
+              gap: 0.25rem;
+              font-size: 0.875rem;
+            }
+          }
+
+          .view-project-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+
+            &:hover {
+              background: rgba(255, 255, 255, 0.3);
+              color: white;
+            }
+          }
+        }
+      }
+
+      .overlay-images {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        .overlay-img {
+          position: absolute;
+          width: 150px;
+          height: 120px;
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+          &.overlay-1 {
+            top: 20px;
+            right: -10px;
+          }
+
+          &.overlay-2 {
+            top: 300px;
+            right: -20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .hero {
+    .search-container .property-search-form {
+      padding: 1.5rem;
+
+      .search-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .search-actions {
+        flex-direction: column;
+
+        .search-btn {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    }
+
+    .quick-search-section .quick-search-tags {
+      justify-content: center;
+    }
+  }
+}

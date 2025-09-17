@@ -1,0 +1,78 @@
+[
+  {
+    "id": "uchess-bot",
+    "image": "assets/images/projects/chess-bot-project-cover.png",
+    "alt": "UCHESS Chess Bot BCA 6th Semester Project",
+    "badge": { "text": "Premium", "type": "premium" },
+    "title": "UCHESS: Chess Bot using Negamax and AlphaBetaPruning",
+    "price": "NPR 10,000",
+    "description": "The UCHESS project develops a web-based chess bot that allows users to play against an AI opponent using the Negamax algorithm with AlphaBetaPruning for efficient move evaluation.",
+    "specs": [
+      { "icon": "bi bi-code-slash", "label": "Angular, Bootstrap" },
+      { "icon": "bi bi-hdd-stack", "label": "Spring Boot" },
+      { "icon": "bi bi-database-lock", "label": "PostgreSQL" }
+    ],
+    "url": "/projects/uchess-bot",
+    "category": "Game Development",
+    "semester": "6th",
+    "complexity": "Advanced",
+    "gallery": [
+      "assets/images/projects/uchess_history_page.png",
+      "assets/images/projects/board.png"
+    ]
+  },
+  {
+    "id": "project-archival",
+    "image": "assets/images/projects/project-archival-project-cover.png",
+    "alt": "Project Archival BCA 6th Semester Project",
+    "badge": { "text": "Hot Deal", "type": "hot" },
+    "title": "PROJECT ARCHIVAL USING HUFFMAN ENCODING ALGORITHM",
+    "price": "NPR 8,500",
+    "description": "A comprehensive project archival system that uses Huffman encoding algorithm for efficient data compression and storage management.",
+    "specs": [
+      { "icon": "bi bi-code-slash", "label": "Angular, Bootstrap" },
+      { "icon": "bi bi-hdd-stack", "label": "Spring Boot" },
+      { "icon": "bi bi-database-lock", "label": "PostgreSQL" }
+    ],
+    "url": "/projects/project-archival",
+    "category": "Data Management",
+    "semester": "6th",
+    "complexity": "Intermediate"
+  },
+  {
+    "id": "mazemaster-pathfinder",
+    "image": "assets/images/projects/mazemaster-project-cover.png",
+    "alt": "MAZEMASTER: PATHFINDER'S ADVENTURE GAME USING BFS",
+    "badge": { "text": "Premium", "type": "premium" },
+    "title": "MAZEMASTER: PATHFINDER'S ADVENTURE GAME USING BFS",
+    "price": "NPR 9,500",
+    "description": "An interactive pathfinding adventure game that implements Breadth-First Search algorithm to find optimal paths through complex mazes.",
+    "specs": [
+      { "icon": "bi bi-code-slash", "label": "Angular, Bootstrap" },
+      { "icon": "bi bi-hdd-stack", "label": "Spring Boot" },
+      { "icon": "bi bi-database-lock", "label": "PostgreSQL" }
+    ],
+    "url": "/projects/mazemaster-pathfinder-adventure-game",
+    "category": "Game Development",
+    "semester": "6th",
+    "complexity": "Advanced"
+  },
+  {
+    "id": "exam-seat-management",
+    "image": "assets/images/projects/exam-seat-management-project-cover.png",
+    "alt": "EXAM SEAT MANAGEMENT SYSTEM USING ZIGZAG BCA 6th Semester Project",
+    "badge": { "text": "Featured", "type": "featured" },
+    "title": "EXAM SEAT MANAGEMENT SYSTEM USING ZIGZAG",
+    "price": "NPR 8,500",
+    "description": "The Exam Seat Management System is a web application that provides a smart solution by automating the entire exam hall allocation process using zigzag seating arrangement.",
+    "specs": [
+      { "icon": "bi bi-code-slash", "label": "Angular, Bootstrap" },
+      { "icon": "bi bi-hdd-stack", "label": "Spring Boot" },
+      { "icon": "bi bi-database-lock", "label": "PostgreSQL" }
+    ],
+    "url": "/projects/exam-seat-management-system",
+    "category": "Management System",
+    "semester": "6th",
+    "complexity": "Intermediate"
+  }
+]

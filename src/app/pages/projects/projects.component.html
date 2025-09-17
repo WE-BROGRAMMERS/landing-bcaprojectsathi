@@ -1,0 +1,269 @@
+<app-breadcrumb></app-breadcrumb>
+
+<!-- Projects Section -->
+<section id="projects" class="properties section" *ngIf="brandInfo() as brandInfo">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="search-bar mb-5" data-aos="fade-up" data-aos-delay="150">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="search-wrapper">
+                        <div class="row g-3">
+                            <div class="col-lg-3 col-md-6">
+                                <div class="search-field">
+                                    <label>Search Projects</label>
+                                    <input type="text" 
+                                           class="form-control" 
+                                           placeholder="Enter project name"
+                                           [(ngModel)]="searchTerm"
+                                           (input)="onSearch()">
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-6">
+                                <div class="search-field">
+                                    <label>Category</label>
+                                    <select class="form-select" [(ngModel)]="selectedCategory">
+                                        <option value="">Any Type</option>
+                                        <option value="Web Development">Web Development</option>
+                                        <option value="Game Development">Game Development</option>
+                                        <option value="Management System">Management System</option>
+                                        <option value="Data Management">Data Management</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-6">
+                                <div class="search-field">
+                                    <label>Price</label>
+                                    <select class="form-select" [(ngModel)]="selectedPriceRange">
+                                        <option value="">Any Price</option>
+                                        <option value="NPR 0 - NPR 5k">NPR 0 - NPR 5k</option>
+                                        <option value="NPR 5k - NPR 8k">NPR 5k - NPR 8k</option>
+                                        <option value="NPR 8k+">NPR 8k+</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="search-field">
+                                    <label>Complexity</label>
+                                    <div class="bedroom-quick">
+                                        <button class="bed-btn" 
+                                                [class.active]="selectedComplexity === ''"
+                                                (click)="selectComplexity('')">Any</button>
+                                        <button class="bed-btn" 
+                                                [class.active]="selectedComplexity === 'Beginner'"
+                                                (click)="selectComplexity('Beginner')">Beginner</button>
+                                        <button class="bed-btn" 
+                                                [class.active]="selectedComplexity === 'Intermediate'"
+                                                (click)="selectComplexity('Intermediate')">Intermediate</button>
+                                        <button class="bed-btn" 
+                                                [class.active]="selectedComplexity === 'Advanced'"
+                                                (click)="selectComplexity('Advanced')">Advanced</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-12">
+                                <div class="search-field">
+                                    <label>Semester</label>
+                                    <select class="form-select" [(ngModel)]="selectedSemester">
+                                        <option value="">Any</option>
+                                        <option value="4th">4th Semester</option>
+                                        <option value="6th">6th Semester</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-header mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="results-info">
+                        <h5>{{ filteredProjects.length }} Projects Found</h5>
+                        <p class="text-muted">Showing BCA projects for all semesters</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="results-controls">
+                        <div class="d-flex gap-3 align-items-center justify-content-lg-end">
+                            <div class="sort-dropdown">
+                                <select class="form-select form-select-sm" 
+                                        [(ngModel)]="sortBy" 
+                                        (change)="onSortChange()">
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="newest">Newest First</option>
+                                    <option value="name">Name A-Z</option>
+                                </select>
+                            </div>
+                            <div class="view-toggle">
+                                <button class="view-btn" 
+                                        [class.active]="currentView === 'masonry'"
+                                        (click)="toggleView('masonry')">
+                                    <i class="bi bi-grid"></i>
+                                </button>
+                                <button class="view-btn" 
+                                        [class.active]="currentView === 'rows'"
+                                        (click)="toggleView('rows')">
+                                    <i class="bi bi-view-stacked"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="properties-container">
+
+            <!-- Masonry View -->
+            <div class="properties-masonry view-masonry" 
+                 [class.active]="currentView === 'masonry'" 
+                 data-aos="fade-up" 
+                 data-aos-delay="250">
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6" *ngFor="let project of filteredProjects; let i = index">
+                        <div class="property-item">
+                            <a [href]="project.url" class="property-link">
+                                <div class="property-image-wrapper">
+                                    <img [src]="project.image" [alt]="project.alt" class="img-fluid">
+                                    <div class="property-status">
+                                        <span class="status-badge" [ngClass]="project.badge.type">
+                                            {{ project.badge.text }}
+                                        </span>
+                                        <span class="status-badge sale">{{ project.semester }} Semester</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="property-details">
+                                <a [href]="project.url" class="property-link">
+                                    <div class="property-header">
+                                        <div class="property-price">{{ project.price }}</div>
+                                        <div class="property-type">{{ project.category }}</div>
+                                    </div>
+                                    <h4 class="property-title">{{ project.title }}</h4>
+                                    <p class="property-address">
+                                        <i class="bi bi-geo-alt"></i>
+                                        {{ project.complexity }} Level - {{ project.semester }} Semester
+                                    </p>
+                                    <div class="property-specs">
+                                        <div class="spec-item" *ngFor="let spec of project.specs">
+                                            <i [class]="spec.icon"></i>
+                                            <span>{{ spec.label }}</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="property-agent-info">
+                                    <div class="agent-avatar">
+                                        <img src="{{brandInfo.brandIcon}}" alt="{{brandInfo.brandName}} + logo"  class="img-fluid">
+                                    </div>
+                                    <div class="agent-details">
+                                        <strong>{{brandInfo.brandName}}</strong>
+                                        <span>Your Academic Partner</span>
+                                    </div>
+                                    <div class="agent-contact">
+                                        <a href="tel:{{brandInfo.contactPhone}}" class="contact-btn">
+                                            <i class="bi bi-telephone"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rows View -->
+            <div class="properties-rows view-rows" [class.active]="currentView === 'rows'">
+                <div class="row g-4">
+                    <div class="col-12" *ngFor="let project of filteredProjects">
+                        <div class="property-row-item">
+                            <a [href]="project.url" class="property-row-link">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-4">
+                                        <div class="property-image-wrapper">
+                                            <img [src]="project.image" [alt]="project.alt" class="img-fluid">
+                                            <div class="property-status">
+                                                <span class="status-badge" [ngClass]="project.badge.type">
+                                                    {{ project.badge.text }}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="property-row-content">
+                                            <div class="row align-items-center">
+                                                <div class="col-lg-10">
+                                                    <div class="property-info">
+                                                        <div class="property-header">
+                                                            <h4 class="property-title">{{ project.title }}</h4>
+                                                            <div class="property-type-price">
+                                                                <span class="property-type">{{ project.category }}</span>
+                                                                <span class="property-price">{{ project.price }}</span>
+                                                            </div>
+                                                        </div>
+                                                        <p class="property-address">
+                                                            <i class="bi bi-geo-alt"></i>
+                                                            {{ project.complexity }} Level - {{ project.semester }} Semester
+                                                        </p>
+                                                        <div class="property-specs">
+                                                            <span *ngFor="let spec of project.specs">
+                                                                <i [class]="spec.icon"></i> {{ spec.label }}
+                                                            </span>
+                                                        </div>
+                                                        <p class="project-description">{{ project.description }}</p>
+                                                        <div class="property-agent">
+                                                            <img src="{{brandInfo.brandIcon}}" alt="{{brandInfo.brandName}} + Logo" class="agent-avatar">
+                                                            <span>{{brandInfo.brandName}}, Your Academic Partner</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="property-actions">
+                                                        <span class="btn btn-primary view-details-btn">View Details</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <nav class="pagination-wrapper mt-5" data-aos="fade-up" data-aos-delay="350" *ngIf="filteredProjects.length > 6">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-6">
+                    <div class="pagination-info">
+                        <p>Showing <strong>1-{{ Math.min(6, filteredProjects.length) }}</strong> of <strong>{{ filteredProjects.length }}</strong> projects</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="pagination justify-content-lg-end">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#">
+                                <i class="bi bi-chevron-left"></i>
+                            </a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+
+</section><!-- /Projects Section -->
