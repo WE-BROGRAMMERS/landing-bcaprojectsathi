@@ -5,14 +5,14 @@
             <img [src]="headerData?.brandLogo" [alt]="headerData?.brandName + ' Logo'">
         </a>
 
-        <nav id="navmenu" class="navmenu">
+        <nav id="navmenu" class="navmenu" #navmenu>
             <ul>
                 <li><a href="/home" class="active">Home</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/projects">Projects</a></li>
                 <li><a href="/services">Services</a></li>
                 <li><a href="https://blog.bcaprojectsathi.com" target="_blank">Blog</a></li>
-                
+
                 <!-- <li class="dropdown"><a href="#"><span>Past Year Questions</span> <i
                             class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
@@ -122,9 +122,10 @@
                     </ul>
                 </li> -->
 
+
                 <li><a href="/contact">Contact</a></li>
             </ul>
-            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list" #mobileNavToggle></i>
         </nav>
 
     </div>
