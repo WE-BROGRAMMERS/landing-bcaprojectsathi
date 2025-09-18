@@ -1,0 +1,730 @@
+[
+    {
+        "id": "uchess-bot",
+        "image": "assets/images/projects/chess-bot-project-cover.png",
+        "alt": "UCHESS Chess Bot BCA 6th Semester Project",
+        "badge": {
+            "text": "Premium",
+            "type": "premium"
+        },
+        "status": {
+            "text": "Available",
+            "type": "available"
+        },
+        "title": "UCHESS: Chess Bot using Negamax and AlphaBetaPruning",
+        "price": "NPR 10,000",
+        "projectId": "#PRJ-2025-0101",
+        "description": "The UCHESS project develops a web-based chess bot that allows users to play against an AI opponent using the Negamax algorithm with AlphaBetaPruning for efficient move evaluation.",
+        "fullDescription": "UCHESS is a full-featured chess platform built with Angular and Spring Boot, featuring a powerful AI opponent. The bot uses Negamax and AlphaBetaPruning for optimal move calculation, providing a challenging experience for users. The project includes a user-friendly interface, game history tracking, and secure authentication.",
+        "category": "Game Development",
+        "semester": "6th",
+        "complexity": "Advanced",
+        "galleryCount": 12,
+        "techCount": 3,
+        "specs": [
+            {
+                "icon": "bi bi-mortarboard",
+                "label": "Semester",
+                "value": "6th"
+            },
+            {
+                "icon": "bi bi-graph-up",
+                "label": "Complexity",
+                "value": "Advanced"
+            },
+            {
+                "icon": "bi bi-images",
+                "label": "Screenshots",
+                "value": "12"
+            },
+            {
+                "icon": "bi bi-code-slash",
+                "label": "Technologies",
+                "value": "3"
+            }
+        ],
+        "features": {
+            "frontend": [
+                "Interactive chess board UI",
+                "Move validation and hints",
+                "Game history tracking",
+                "Responsive design"
+            ],
+            "backend": [
+                "Negamax algorithm implementation",
+                "AlphaBetaPruning optimization",
+                "User authentication",
+                "RESTful API"
+            ]
+        },
+        "technologies": [
+            {
+                "name": "Angular",
+                "type": "Frontend",
+                "icon": "bi bi-code-slash"
+            },
+            {
+                "name": "Spring Boot",
+                "type": "Backend",
+                "icon": "bi bi-hdd-stack"
+            },
+            {
+                "name": "PostgreSQL",
+                "type": "Database",
+                "icon": "bi bi-database-lock"
+            }
+        ],
+        "gallery": [
+            {
+                "main": "assets/images/projects/uchess_history_page.png",
+                "thumbnail": "assets/images/projects/uchess_history_page.png",
+                "alt": "Game History"
+            },
+            {
+                "main": "assets/images/projects/board.png",
+                "thumbnail": "assets/images/projects/board.png",
+                "alt": "Chess Board"
+            }
+        ],
+        "techStack": {
+            "title": "Technology Stack",
+            "description": "Angular for frontend, Spring Boot for backend, and PostgreSQL for data storage.",
+            "categories": [
+                {
+                    "icon": "bi bi-laptop",
+                    "iconColor": "text-primary",
+                    "title": "Frontend",
+                    "technologies": "Angular, Bootstrap"
+                },
+                {
+                    "icon": "bi bi-server",
+                    "iconColor": "text-success",
+                    "title": "Backend",
+                    "technologies": "Spring Boot"
+                },
+                {
+                    "icon": "bi bi-database",
+                    "iconColor": "text-warning",
+                    "title": "Database",
+                    "technologies": "PostgreSQL"
+                }
+            ]
+        },
+        "developer": {
+            "name": "Utsab Dahal",
+            "role": "Backend Developer",
+            "avatar": "assets/images/team/utsab-dahal.png",
+            "rating": 4.8,
+            "projectsCompleted": 20,
+            "contact": {
+                "phone": "+977 98XXXXXXXX",
+                "email": "info@dahalutsab.com.np"
+            },
+            "isOnline": true
+        },
+        "pricing": {
+            "basePrice": 10000,
+            "currency": "NPR",
+            "period": "project",
+            "includes": [
+                {
+                    "item": "Complete Source Code",
+                    "included": true
+                },
+                {
+                    "item": "Documentation",
+                    "included": true
+                },
+                {
+                    "item": "Setup Instructions",
+                    "included": true
+                },
+                {
+                    "item": "1-day Support",
+                    "included": true
+                }
+            ],
+            "deposit": "Source Code Included",
+            "availability": "Available for Purchase"
+        },
+        "similarProjects": [
+            {
+                "id": "mazemaster-pathfinder-adventure-game",
+                "title": "MAZEMASTER: PATHFINDER'S ADVENTURE GAME USING BFS",
+                "price": "NPR 9,500",
+                "image": "assets/images/projects/mazemaster-project-cover.png",
+                "technologies": "Angular • Spring Boot • PostgreSQL",
+                "url": "/projects/mazemaster-pathfinder-adventure-game"
+            }
+        ],
+        "url": "/projects/uchess-bot",
+        "demoUrl": "",
+        "createdDate": "2025-02-10",
+        "lastUpdated": "2025-08-20",
+        "tags": [
+            "Chess",
+            "AI",
+            "Game Development",
+            "Angular",
+            "Spring Boot"
+        ],
+        "seo": {
+            "metaTitle": "UCHESS Chess Bot Project - Advanced AI Chess Game",
+            "metaDescription": "Play chess against an AI bot powered by Negamax and AlphaBetaPruning. Full source code and documentation included.",
+            "keywords": "chess bot, AI chess, Negamax, AlphaBetaPruning, Angular, Spring Boot, PostgreSQL"
+        },
+        "documentationUrl": "/assets/pdf/UChess BCA 6th Sem Project Documentation Sample TU.pdf"
+    },
+    {
+        "id": "project-archival",
+        "image": "assets/images/projects/project-archival-project-cover.png",
+        "alt": "Project Archival BCA 6th Semester Project",
+        "badge": {
+            "text": "Hot Deal",
+            "type": "hot"
+        },
+        "status": {
+            "text": "Available",
+            "type": "available"
+        },
+        "title": "PROJECT ARCHIVAL USING HUFFMAN ENCODING ALGORITHM",
+        "price": "NPR 8,500",
+        "projectId": "#PRJ-2025-0102",
+        "description": "A comprehensive project archival system that uses Huffman encoding algorithm for efficient data compression and storage management.",
+        "fullDescription": "This project offers a robust solution for archiving and compressing project files using Huffman encoding. It features a user-friendly interface for uploading, compressing, and retrieving files, ensuring optimal storage utilization and fast access.",
+        "category": "Data Management",
+        "semester": "6th",
+        "complexity": "Intermediate",
+        "galleryCount": 10,
+        "techCount": 3,
+        "specs": [
+            {
+                "icon": "bi bi-mortarboard",
+                "label": "Semester",
+                "value": "6th"
+            },
+            {
+                "icon": "bi bi-graph-up",
+                "label": "Complexity",
+                "value": "Intermediate"
+            },
+            {
+                "icon": "bi bi-images",
+                "label": "Screenshots",
+                "value": "10"
+            },
+            {
+                "icon": "bi bi-code-slash",
+                "label": "Technologies",
+                "value": "3"
+            }
+        ],
+        "features": {
+            "frontend": [
+                "File upload and management UI",
+                "Compression progress indicator",
+                "Search and filter archives"
+            ],
+            "backend": [
+                "Huffman encoding implementation",
+                "Efficient file storage",
+                "User authentication",
+                "RESTful API"
+            ]
+        },
+        "technologies": [
+            {
+                "name": "Angular",
+                "type": "Frontend",
+                "icon": "bi bi-code-slash"
+            },
+            {
+                "name": "Spring Boot",
+                "type": "Backend",
+                "icon": "bi bi-hdd-stack"
+            },
+            {
+                "name": "PostgreSQL",
+                "type": "Database",
+                "icon": "bi bi-database-lock"
+            }
+        ],
+        "gallery": [
+            {
+                "main": "assets/images/projects/project-archival-1.png",
+                "thumbnail": "assets/images/projects/project-archival-1.png",
+                "alt": "Archival Dashboard"
+            },
+            {
+                "main": "assets/images/projects/project-archival-2.png",
+                "thumbnail": "assets/images/projects/project-archival-2.png",
+                "alt": "Compression Progress"
+            }
+        ],
+        "techStack": {
+            "title": "Technology Stack",
+            "description": "Angular for frontend, Spring Boot for backend, and PostgreSQL for data storage.",
+            "categories": [
+                {
+                    "icon": "bi bi-laptop",
+                    "iconColor": "text-primary",
+                    "title": "Frontend",
+                    "technologies": "Angular, Bootstrap"
+                },
+                {
+                    "icon": "bi bi-server",
+                    "iconColor": "text-success",
+                    "title": "Backend",
+                    "technologies": "Spring Boot"
+                },
+                {
+                    "icon": "bi bi-database",
+                    "iconColor": "text-warning",
+                    "title": "Database",
+                    "technologies": "PostgreSQL"
+                }
+            ]
+        },
+        "developer": {
+            "name": "Pasang Gelbu Sherpa",
+            "role": "Backend Developer",
+            "avatar": "assets/images/team/pasang-gelbu-sherpa.jpg",
+            "rating": 4.7,
+            "projectsCompleted": 15,
+            "contact": {
+                "phone": "+977 98XXXXXXXX",
+                "email": "ps9594083@gmail.com"
+            },
+            "isOnline": true
+        },
+        "pricing": {
+            "basePrice": 8500,
+            "currency": "NPR",
+            "period": "project",
+            "includes": [
+                {
+                    "item": "Complete Source Code",
+                    "included": true
+                },
+                {
+                    "item": "Documentation",
+                    "included": true
+                },
+                {
+                    "item": "Setup Instructions",
+                    "included": true
+                },
+                {
+                    "item": "1-day Support",
+                    "included": true
+                }
+            ],
+            "deposit": "Source Code Included",
+            "availability": "Available for Purchase"
+        },
+        "similarProjects": [
+            {
+                "id": "exam-seat-management",
+                "title": "EXAM SEAT MANAGEMENT SYSTEM USING ZIGZAG",
+                "price": "NPR 8,500",
+                "image": "assets/images/projects/exam-seat-management-project-cover.png",
+                "technologies": "Angular • Spring Boot • PostgreSQL",
+                "url": "/projects/exam-seat-management-system"
+            }
+        ],
+        "url": "/projects/project-archival",
+        "demoUrl": "",
+        "createdDate": "2025-01-25",
+        "lastUpdated": "2025-08-10",
+        "tags": [
+            "Archival",
+            "Compression",
+            "Huffman Encoding",
+            "Angular",
+            "Spring Boot"
+        ],
+        "seo": {
+            "metaTitle": "Project Archival System - Huffman Encoding",
+            "metaDescription": "Efficient project archival and compression using Huffman encoding. Includes source code and database schema.",
+            "keywords": "project archival, Huffman encoding, compression, Angular, Spring Boot, PostgreSQL"
+        },
+        "documentationUrl": "/assets/pdf/Project Archival BCA 6th Sem Project Documentation Sample TU.pdf"
+    },
+    {
+        "id": "mazemaster-pathfinder-adventure-game",
+        "image": "assets/images/projects/mazemaster-project-cover.png",
+        "alt": "MAZEMASTER: PATHFINDER'S ADVENTURE GAME USING BFS",
+        "badge": {
+            "text": "Premium",
+            "type": "premium"
+        },
+        "status": {
+            "text": "Available",
+            "type": "available"
+        },
+        "title": "MAZEMASTER: PATHFINDER'S ADVENTURE GAME USING BFS",
+        "price": "NPR 9,500",
+        "projectId": "#PRJ-2025-0103",
+        "description": "An interactive pathfinding adventure game that implements Breadth-First Search algorithm to find optimal paths through complex mazes.",
+        "fullDescription": "MAZEMASTER is a game development project that challenges users to solve mazes using BFS. The game features multiple levels, animated pathfinding, and a scoring system. The backend manages user progress and maze generation.",
+        "category": "Game Development",
+        "semester": "6th",
+        "complexity": "Advanced",
+        "galleryCount": 7,
+        "techCount": 3,
+        "specs": [
+            {
+                "icon": "bi bi-mortarboard",
+                "label": "Semester",
+                "value": "6th"
+            },
+            {
+                "icon": "bi bi-graph-up",
+                "label": "Complexity",
+                "value": "Advanced"
+            },
+            {
+                "icon": "bi bi-images",
+                "label": "Screenshots",
+                "value": "7"
+            },
+            {
+                "icon": "bi bi-code-slash",
+                "label": "Technologies",
+                "value": "3"
+            }
+        ],
+        "features": {
+            "frontend": [
+                "Animated maze visualization",
+                "Level selection",
+                "Score tracking",
+                "Responsive design"
+            ],
+            "backend": [
+                "Maze generation algorithm",
+                "Breadth-First Search implementation",
+                "User progress management",
+                "RESTful API"
+            ]
+        },
+        "technologies": [
+            {
+                "name": "Angular",
+                "type": "Frontend",
+                "icon": "bi bi-code-slash"
+            },
+            {
+                "name": "Spring Boot",
+                "type": "Backend",
+                "icon": "bi bi-hdd-stack"
+            },
+            {
+                "name": "PostgreSQL",
+                "type": "Database",
+                "icon": "bi bi-database-lock"
+            }
+        ],
+        "gallery": [
+            {
+                "main": "assets/images/projects/mazemaster/landing-page.png",
+                "thumbnail": "assets/images/projects/mazemaster/landing-page.png",
+                "alt": "Landing Page"
+            },
+            {
+                "main": "assets/images/projects/mazemaster/level-page.png",
+                "thumbnail": "assets/images/projects/mazemaster/level-page.png",
+                "alt": "Level Page"
+            },
+            {
+                "main": "assets/images/projects/mazemaster/leaderboard.png",
+                "thumbnail": "assets/images/projects/mazemaster/leaderboard.png",
+                "alt": "Leaderboard Page"
+            },
+            {
+                "main": "assets/images/projects/mazemaster/profile.png",
+                "thumbnail": "assets/images/projects/mazemaster/profile.png",
+                "alt": "Profile Page"
+            },
+            {
+                "main": "assets/images/projects/mazemaster/register.png",
+                "thumbnail": "assets/images/projects/mazemaster/register.png",
+                "alt": "Register Page"
+            },
+            {
+                "main": "assets/images/projects/mazemaster/login.png",
+                "thumbnail": "assets/images/projects/mazemaster/login.png",
+                "alt": "Login Page"
+            },
+            {
+                "main": "assets/images/projects/mazemaster/email-verification.png",
+                "thumbnail": "assets/images/projects/mazemaster/email-verification.png",
+                "alt": "Email Verification"
+            }
+        ],
+        "techStack": {
+            "title": "Technology Stack",
+            "description": "Angular for frontend, Spring Boot for backend, and PostgreSQL for data storage.",
+            "categories": [
+                {
+                    "icon": "bi bi-laptop",
+                    "iconColor": "text-primary",
+                    "title": "Frontend",
+                    "technologies": "Angular, Bootstrap"
+                },
+                {
+                    "icon": "bi bi-server",
+                    "iconColor": "text-success",
+                    "title": "Backend",
+                    "technologies": "Spring Boot"
+                },
+                {
+                    "icon": "bi bi-database",
+                    "iconColor": "text-warning",
+                    "title": "Database",
+                    "technologies": "PostgreSQL"
+                }
+            ]
+        },
+        "developer": {
+            "name": "Dhiraj Jirel",
+            "role": "Backend Developer",
+            "avatar": "assets/images/team/dhiraj-jirel.png",
+            "rating": 4.7,
+            "projectsCompleted": 20,
+            "contact": {
+                "phone": "+977 9869550743",
+                "email": "info@dhirajjirel.com.np"
+            },
+            "isOnline": true
+        },
+        "pricing": {
+            "basePrice": 9500,
+            "currency": "NPR",
+            "period": "project",
+            "includes": [
+                {
+                    "item": "Complete Source Code",
+                    "included": true
+                },
+                {
+                    "item": "Documentation",
+                    "included": true
+                },
+                {
+                    "item": "Setup Instructions",
+                    "included": true
+                },
+                {
+                    "item": "1-day Support",
+                    "included": true
+                }
+            ],
+            "deposit": "Source Code Included",
+            "availability": "Available for Purchase"
+        },
+        "similarProjects": [
+            {
+                "id": "uchess-bot",
+                "title": "UCHESS: Chess Bot using Negamax and AlphaBetaPruning",
+                "price": "NPR 10,000",
+                "image": "assets/images/projects/chess-bot-project-cover.png",
+                "technologies": "Angular • Spring Boot • PostgreSQL",
+                "url": "/projects/uchess-bot"
+            }
+        ],
+        "url": "/projects/mazemaster-pathfinder-adventure-game",
+        "demoUrl": "",
+        "createdDate": "2025-02-18",
+        "lastUpdated": "2025-08-22",
+        "tags": [
+            "Maze",
+            "Game Development",
+            "BFS",
+            "Angular",
+            "Spring Boot"
+        ],
+        "seo": {
+            "metaTitle": "MAZEMASTER Pathfinder Game - BFS Algorithm",
+            "metaDescription": "Solve mazes using BFS in this interactive adventure game. Full source code and documentation included.",
+            "keywords": "maze game, BFS, pathfinding, Angular, Spring Boot, PostgreSQL"
+        },
+        "documentationUrl": "/assets/pdf/MazeMaster BCA 6th Sem Project Documentation Sample TU.pdf"
+    },
+    {
+        "id": "exam-seat-management-system",
+        "image": "assets/images/projects/exam-seat-management-project-cover.png",
+        "alt": "EXAM SEAT MANAGEMENT SYSTEM USING ZIGZAG BCA 6th Semester Project",
+        "badge": {
+            "text": "Featured",
+            "type": "featured"
+        },
+        "status": {
+            "text": "Available",
+            "type": "available"
+        },
+        "title": "EXAM SEAT MANAGEMENT SYSTEM USING ZIGZAG",
+        "price": "NPR 8,500",
+        "projectId": "#PRJ-2025-0104",
+        "description": "The Exam Seat Management System is a web application that provides a smart solution by automating the entire exam hall allocation process using zigzag seating arrangement.",
+        "fullDescription": "This project streamlines the exam seat allocation process for educational institutions. It features an intelligent zigzag seating algorithm to minimize cheating, an intuitive admin dashboard for managing students and halls, and automated seat assignment. The system ensures efficient, error-free, and transparent seat management.",
+        "category": "Management System",
+        "semester": "6th",
+        "complexity": "Intermediate",
+        "galleryCount": 8,
+        "techCount": 3,
+        "specs": [
+            {
+                "icon": "bi bi-mortarboard",
+                "label": "Semester",
+                "value": "6th"
+            },
+            {
+                "icon": "bi bi-graph-up",
+                "label": "Complexity",
+                "value": "Intermediate"
+            },
+            {
+                "icon": "bi bi-images",
+                "label": "Screenshots",
+                "value": "8"
+            },
+            {
+                "icon": "bi bi-code-slash",
+                "label": "Technologies",
+                "value": "3"
+            }
+        ],
+        "features": {
+            "frontend": [
+                "Admin dashboard for seat allocation",
+                "Student and hall management UI",
+                "Real-time seat map visualization",
+                "Responsive design"
+            ],
+            "backend": [
+                "Zigzag seat allocation algorithm",
+                "User authentication and roles",
+                "Automated report generation",
+                "RESTful API"
+            ]
+        },
+        "technologies": [
+            {
+                "name": "Angular",
+                "type": "Frontend",
+                "icon": "bi bi-code-slash"
+            },
+            {
+                "name": "Spring Boot",
+                "type": "Backend",
+                "icon": "bi bi-hdd-stack"
+            },
+            {
+                "name": "PostgreSQL",
+                "type": "Database",
+                "icon": "bi bi-database-lock"
+            }
+        ],
+        "gallery": [
+            {
+                "main": "assets/images/projects/exam-seat-management-1.png",
+                "thumbnail": "assets/images/projects/exam-seat-management-1.png",
+                "alt": "Seat Allocation Dashboard"
+            },
+            {
+                "main": "assets/images/projects/exam-seat-management-2.png",
+                "thumbnail": "assets/images/projects/exam-seat-management-2.png",
+                "alt": "Zigzag Arrangement Visualization"
+            }
+        ],
+        "techStack": {
+            "title": "Technology Stack",
+            "description": "Angular for frontend, Spring Boot for backend, and PostgreSQL for data storage.",
+            "categories": [
+                {
+                    "icon": "bi bi-laptop",
+                    "iconColor": "text-primary",
+                    "title": "Frontend",
+                    "technologies": "Angular, Bootstrap"
+                },
+                {
+                    "icon": "bi bi-server",
+                    "iconColor": "text-success",
+                    "title": "Backend",
+                    "technologies": "Spring Boot"
+                },
+                {
+                    "icon": "bi bi-database",
+                    "iconColor": "text-warning",
+                    "title": "Database",
+                    "technologies": "PostgreSQL"
+                }
+            ]
+        },
+        "developer": {
+            "name": "Chitra Prasad Acharya",
+            "role": "Frontend Developer",
+            "avatar": "assets/images/team/chitra-prasad-acharya.png",
+            "rating": 4.5,
+            "projectsCompleted": 15,
+            "contact": {
+                "phone": "+977 9822523924",
+                "email": "chitraprasadacharya550@gmail.com"
+            },
+            "isOnline": false
+        },
+        "pricing": {
+            "basePrice": 8500,
+            "currency": "NPR",
+            "period": "project",
+            "includes": [
+                {
+                    "item": "Complete Source Code",
+                    "included": true
+                },
+                {
+                    "item": "Documentation",
+                    "included": true
+                },
+                {
+                    "item": "Setup Instructions",
+                    "included": true
+                },
+                {
+                    "item": "1-day Support",
+                    "included": true
+                }
+            ],
+            "deposit": "Source Code Included",
+            "availability": "Available for Purchase"
+        },
+        "similarProjects": [
+            {
+                "id": "project-archival",
+                "title": "PROJECT ARCHIVAL USING HUFFMAN ENCODING ALGORITHM",
+                "price": "NPR 8,500",
+                "image": "assets/images/projects/project-archival-project-cover.png",
+                "technologies": "Angular • Spring Boot • PostgreSQL",
+                "url": "/projects/project-archival"
+            }
+        ],
+        "url": "/projects/exam-seat-management-system",
+        "demoUrl": "",
+        "createdDate": "2025-03-01",
+        "lastUpdated": "2025-08-25",
+        "tags": [
+            "Exam Management",
+            "Seat Allocation",
+            "Zigzag Algorithm",
+            "Angular",
+            "Spring Boot"
+        ],
+        "seo": {
+            "metaTitle": "Exam Seat Management System - Zigzag Arrangement",
+            "metaDescription": "Automate exam hall seat allocation with zigzag arrangement. Full source code, database schema, and documentation included.",
+            "keywords": "exam seat management, zigzag algorithm, seat allocation, Angular, Spring Boot, PostgreSQL"
+        },
+        "documentationUrl": "/assets/pdf/Exam Seat Management System BCA 6th Sem Project Documentation Sample TU.pdf"
+    }
+]

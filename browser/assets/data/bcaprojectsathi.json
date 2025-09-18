@@ -1,0 +1,16 @@
+{
+    "brandName": "BCAProjectSathi",
+    "shortDescription": "We understand the pressures of academic life. That's why we offer personalized web development project assistance designed specifically for BCA students.",
+    "detailedDescription": "BCA Project Sathi is an innovative web application designed to assist BCA students in finding and collaborating on academic projects. The platform provides a curated list of project ideas, detailed descriptions, and resources to help students successfully complete their projects. We also provide project documentation, study materials like notes based on syllabus, past year questions, and more.",
+    "brandLogo": "assets/icons/bcaprojectsathi-logo-white.png",
+    "brandIcon": "assets/icons/bcaprojectsathi-icon.png",
+    "location": "Chabahil, Kathmandu, Nepal",
+    "contactEmail": "info@bcaprojectsathi.com",
+    "contactPhone": "+977 9869550743",
+    "socialLinks": {
+        "facebook": "https://www.facebook.com/bcaprojectsathi",
+        "linkedin": "https://www.linkedin.com/company/bcaprojectsathi",
+        "instagram": "https://www.instagram.com/bcaprojectsathi"
+    },
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14128.096108380721!2d85.33893219810489!3d27.716544417243462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb197d9d23f7ed%3A0x2724281b4393865d!2sChabahil%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1755671199830!5m2!1sen!2snp"
+}
