@@ -1,11 +1,15 @@
-<header id="header" class="header d-flex align-items-center sticky-top">
+<header id="header"
+        class="header d-flex align-items-center sticky-top"
+        [class.mobile-nav-active]="mobileNavActive"
+        *ngIf="headerData() as headerData">
+
   <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
+    <a routerLink="/home" class="logo d-flex align-items-center">
+      <img [src]="headerData?.brandLogo" [alt]="headerData?.brandName + ' Logo'">
+    </a>
 
-    <img [src]="headerData()?.brandLogo" [alt]="headerData()?.brandName + ' Logo'">
-
-
-    <nav id="navmenu" class="navmenu" [class.mobile-nav-active]="mobileNavActive">
+    <nav id="navmenu" class="navmenu">
       <ul>
         <li><a routerLink="/home" routerLinkActive="active" (click)="closeMobileNav()">Home</a></li>
         <li><a routerLink="/about" routerLinkActive="active" (click)="closeMobileNav()">About</a></li>
@@ -23,4 +27,3 @@
 
   </div>
 </header>
-
