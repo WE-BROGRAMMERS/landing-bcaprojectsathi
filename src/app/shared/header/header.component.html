@@ -5,127 +5,21 @@
             <img [src]="headerData?.brandLogo" [alt]="headerData?.brandName + ' Logo'">
         </a>
 
-        <nav id="navmenu" class="navmenu">
-            <ul>
-                <li><a href="/home" class="active">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/projects">Projects</a></li>
-                <li><a href="/services">Services</a></li>
-                <li><a href="https://blog.bcaprojectsathi.com" target="_blank">Blog</a></li>
-                
-                <!-- <li class="dropdown"><a href="#"><span>Past Year Questions</span> <i
-                            class="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                        <li><a href="">1st Semester</a></li>
-                        <li><a href="">2nd Semester</a></li>
-                        <li><a href="">3rd Semester</a></li>
-                        <li><a href="">4th Semester</a></li>
-                        <li><a href="">5th Semester</a></li>
-                        <li><a href="">6th Semester</a></li>
-                        <li><a href="">7th Semester</a></li>
-                        <li><a href="">8th Semester</a></li>
-                    </ul>
-                </li>
+      <nav id="navmenu" class="navmenu" [class.mobile-nav-active]="mobileNavActive">
+        <ul>
+          <li><a routerLink="/home" routerLinkActive="active" (click)="closeMobileNav()">Home</a></li>
+          <li><a routerLink="/about" routerLinkActive="active" (click)="closeMobileNav()">About</a></li>
+          <li><a routerLink="/projects" routerLinkActive="active" (click)="closeMobileNav()">Projects</a></li>
+          <li><a routerLink="/services" routerLinkActive="active" (click)="closeMobileNav()">Services</a></li>
+          <li><a href="https://blog.bcaprojectsathi.com" target="_blank">Blog</a></li>
+          <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMobileNav()">Contact</a></li>
+        </ul>
 
-                <li><a href="">Syllabus</a></li>
-
-                <li class="dropdown"><a href="#"><span>Exam Preparation Notes</span> <i
-                            class="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                        <li class="dropdown"><a href="#"><span>1st Semester</span> <i
-                                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                            <ul>
-                                <li><a href="#">Digital Logic</a></li>
-                                <li><a href="#">English I</a></li>
-                                <li><a href="#">Mathematics I</a></li>
-                                <li><a href="#">Society and Technology</a></li>
-                                <li><a href="#">Computer Fundamentals and Applications</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="dropdown"><a href="#"><span>2nd Semester</span> <i
-                                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                            <ul>
-                                <li><a href="#">Digital Logic</a></li>
-                                <li><a href="#">English I</a></li>
-                                <li><a href="#">Mathematics I</a></li>
-                                <li><a href="#">Society and Technology</a></li>
-                                <li><a href="#">Computer Fundamentals and Applications</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="dropdown"><a href="#"><span>3rd Semester</span> <i
-                                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                            <ul>
-                                <li><a href="#">Digital Logic</a></li>
-                                <li><a href="#">English I</a></li>
-                                <li><a href="#">Mathematics I</a></li>
-                                <li><a href="#">Society and Technology</a></li>
-                                <li><a href="#">Computer Fundamentals and Applications</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="dropdown"><a href="#"><span>4th Semester</span> <i
-                                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                            <ul>
-                                <li><a href="#">Digital Logic</a></li>
-                                <li><a href="#">English I</a></li>
-                                <li><a href="#">Mathematics I</a></li>
-                                <li><a href="#">Society and Technology</a></li>
-                                <li><a href="#">Computer Fundamentals and Applications</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="dropdown"><a href="#"><span>5th Semester</span> <i
-                                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                            <ul>
-                                <li><a href="#">Digital Logic</a></li>
-                                <li><a href="#">English I</a></li>
-                                <li><a href="#">Mathematics I</a></li>
-                                <li><a href="#">Society and Technology</a></li>
-                                <li><a href="#">Computer Fundamentals and Applications</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="dropdown"><a href="#"><span>6th Semester</span> <i
-                                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                            <ul>
-                                <li><a href="#">Digital Logic</a></li>
-                                <li><a href="#">English I</a></li>
-                                <li><a href="#">Mathematics I</a></li>
-                                <li><a href="#">Society and Technology</a></li>
-                                <li><a href="#">Computer Fundamentals and Applications</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="dropdown"><a href="#"><span>7th Semester</span> <i
-                                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                            <ul>
-                                <li><a href="#">Digital Logic</a></li>
-                                <li><a href="#">English I</a></li>
-                                <li><a href="#">Mathematics I</a></li>
-                                <li><a href="#">Society and Technology</a></li>
-                                <li><a href="#">Computer Fundamentals and Applications</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="dropdown"><a href="#"><span>8th Semester</span> <i
-                                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                            <ul>
-                                <li><a href="#">Digital Logic</a></li>
-                                <li><a href="#">English I</a></li>
-                                <li><a href="#">Mathematics I</a></li>
-                                <li><a href="#">Society and Technology</a></li>
-                                <li><a href="#">Computer Fundamentals and Applications</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li> -->
-
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
+        <!-- mobile nav toggle button -->
+        <i class="mobile-nav-toggle d-xl-none"
+           [ngClass]="mobileNavActive ? 'bi-x' : 'bi-list'"
+           (click)="toggleMobileNav()"></i>
+      </nav>
 
     </div>
 </header>
