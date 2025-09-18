@@ -1,25 +1,26 @@
-<header id="header" class="header d-flex align-items-center sticky-top" *ngIf="headerData() as headerData">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+<header id="header" class="header d-flex align-items-center sticky-top">
+  <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-        <a href="/home" class="logo d-flex align-items-center">
-            <img [src]="headerData?.brandLogo" [alt]="headerData?.brandName + ' Logo'">
-        </a>
 
-      <nav id="navmenu" class="navmenu" [class.mobile-nav-active]="mobileNavActive">
-        <ul>
-          <li><a routerLink="/home" routerLinkActive="active" (click)="closeMobileNav()">Home</a></li>
-          <li><a routerLink="/about" routerLinkActive="active" (click)="closeMobileNav()">About</a></li>
-          <li><a routerLink="/projects" routerLinkActive="active" (click)="closeMobileNav()">Projects</a></li>
-          <li><a routerLink="/services" routerLinkActive="active" (click)="closeMobileNav()">Services</a></li>
-          <li><a href="https://blog.bcaprojectsathi.com" target="_blank">Blog</a></li>
-          <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMobileNav()">Contact</a></li>
-        </ul>
+    <img [src]="headerData()?.brandLogo" [alt]="headerData()?.brandName + ' Logo'">
 
-        <!-- mobile nav toggle button -->
-        <i class="mobile-nav-toggle d-xl-none"
-           [ngClass]="mobileNavActive ? 'bi-x' : 'bi-list'"
-           (click)="toggleMobileNav()"></i>
-      </nav>
 
-    </div>
+    <nav id="navmenu" class="navmenu" [class.mobile-nav-active]="mobileNavActive">
+      <ul>
+        <li><a routerLink="/home" routerLinkActive="active" (click)="closeMobileNav()">Home</a></li>
+        <li><a routerLink="/about" routerLinkActive="active" (click)="closeMobileNav()">About</a></li>
+        <li><a routerLink="/projects" routerLinkActive="active" (click)="closeMobileNav()">Projects</a></li>
+        <li><a routerLink="/services" routerLinkActive="active" (click)="closeMobileNav()">Services</a></li>
+        <li><a href="https://blog.bcaprojectsathi.com" target="_blank">Blog</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMobileNav()">Contact</a></li>
+      </ul>
+
+      <!-- mobile nav toggle button -->
+      <i class="mobile-nav-toggle d-xl-none"
+         [ngClass]="mobileNavActive ? 'bi-x' : 'bi-list'"
+         (click)="toggleMobileNav()"></i>
+    </nav>
+
+  </div>
 </header>
+
